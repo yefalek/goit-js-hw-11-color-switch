@@ -19,10 +19,12 @@ const start = document.querySelector('[data-action="start"]');
 const stop = document.querySelector('[data-action="stop"]');
 
 let timer = null;
+const zero = 0;
+const maxLength = colors.length - 1;
 
 function changeBgColor(e) {
     timer = setInterval(() => {
-        const color = colors[randomIntegerFromInterval(0, 5)]
+        const color = colors[randomIntegerFromInterval(zero, maxLength)]
         document.body.style.backgroundColor = color;
     }, 1000)
     start.disabled = true;
